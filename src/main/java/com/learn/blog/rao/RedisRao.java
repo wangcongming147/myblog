@@ -61,6 +61,10 @@ public class RedisRao {
 		valOpsStr.set(key, value);
 	}
 	
+	public long increment(String key,long value){
+		return valOps.increment(key, value);
+	}
+	
 	public Object getObjectValue(String key){
 		return valOps.get(key);
 	}

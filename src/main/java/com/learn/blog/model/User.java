@@ -37,4 +37,6 @@ public class User {
 	
 	private Date updateTime;
 	
+	//1-正常 2-禁止登陆
+	private String status;
 }
