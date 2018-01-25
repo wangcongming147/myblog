@@ -1,6 +1,5 @@
 package com.learn.blog.dao;
 
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -27,7 +26,7 @@ public interface UserDao {
 	public User findUserByEmail(String email);
 	
 	@InsertProvider(type = UserProvider.class, method = "insertSql")
-	public void save(User user);
+	public void save(@Param("user")User user);
 	
 	@UpdateProvider(type = UserProvider.class, method = "updateSql")
 	public void updateEntity(@Param("user") User entity);

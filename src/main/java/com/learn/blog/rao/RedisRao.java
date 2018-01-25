@@ -1,4 +1,4 @@
-package com.learn.blog.redis;
+package com.learn.blog.rao;
 
 import java.util.List;
 import java.util.Map;
@@ -25,11 +25,11 @@ public class RedisRao {
 	
 	@Autowired
 	RedisTemplate<Object, Object> redisTemplate;
-
+	
 	@Resource(name = "stringRedisTemplate")
 	ValueOperations<String, String> valOpsStr;
 
-	@Resource(name = "redisTemplate") 
+	@Resource(name = "redisTemplate")
 	ValueOperations<String, Object> valOps;
 
 	@Resource(name = "redisTemplate")
@@ -50,6 +50,10 @@ public class RedisRao {
 	
 	public void setString(String key,String value){
 		valOpsStr.set(key, value);
+	}
+	
+	public long increment(String key,long value){
+		return valOps.increment(key, value);
 	}
 	
 	public Object getObjectValue(String key){
