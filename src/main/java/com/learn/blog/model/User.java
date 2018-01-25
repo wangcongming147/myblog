@@ -30,11 +30,12 @@ public class User {
 	private String email;
 	
 	private String wechat;
-	
+	//1-已删除 2-正常
 	private String delFlag;
 	
 	private Date createTime;
 	
 	private Date updateTime;
-	
+	//1-正常 2-禁止登陆
+	private String status;
 }
